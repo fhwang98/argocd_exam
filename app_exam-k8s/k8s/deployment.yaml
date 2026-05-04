@@ -17,7 +17,7 @@ spec:
       - name: dockerhub-secret #docker hub 관련 정보 추가
       containers:
       - name: my-webserver
-        image: fhwang98/echo-hostname:1.0
+        image: fhwang98/echo-hostname:c46e32b9393e47b7b5e0dffd67898885a579f58a
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
