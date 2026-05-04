@@ -38,10 +38,18 @@ jobs:
         git clone https://github.com/fhwang98/argocd_exam.git
         cd app_exam-k8s/k8s/
 
+        echo "==========Before update=========="
+        cat deployment.yaml | grep "image: "
+        echo "==========Before update=========="
+
         sed -i "s|image:.*|image: $IMAGE_NAME:${{ github.sha }}|g" deployment.yaml
 
-        git config user.name "fhwang98"
-        git config user.email "fhwang9815@gmail.com"
+        echo "==========After update=========="
+        cat deployment.yaml | grep "image: "
+        echo "==========After update=========="
+
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
 
         git add .
         git commit -m "update image tag ${{ github.sha }}"
