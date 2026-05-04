@@ -1,1 +1,1 @@
-argodc exam
+argocd exam
